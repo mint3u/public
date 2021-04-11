@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: provision
     environment:
-      name: development
+      name: development # ここがgithubで作成したenvironment nameと合致する
       url: http://example.com/
     steps:
       - name: deploy development
