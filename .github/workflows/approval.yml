@@ -2,9 +2,7 @@ name: approval
 
 on:
   push:
-    branches: [test1]
-  pull_request:
-    branches: [test1]
+    branches: ["**"]
 
 jobs:
   provision:
@@ -17,14 +15,14 @@ jobs:
         run: |
           echo "provision aaa"
 
-  after:
+  deploy-development:
     runs-on: ubuntu-latest
-    needs: build
+    needs: provision
     environment:
       name: development
       url: http://example.com/
     steps:
-      - name: after
-        id: after
+      - name: deploy development
+        id: deploy-development
         run: |
-          echo "build aaa"
+          echo "deploy aaa"
