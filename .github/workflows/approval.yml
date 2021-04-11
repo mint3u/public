@@ -11,7 +11,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: provision
         id: provision
-        # PRへのコメントをpostしたい
         run: |
           echo "provision aaa"
 
